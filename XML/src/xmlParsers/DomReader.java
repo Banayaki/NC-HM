@@ -12,6 +12,12 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.LinkedList;
 
+/**
+ * DOM parser for XML
+ * Обработка xml документа
+ *
+ * @author banayaki
+ */
 public class DomReader {
 
     private Document document;
@@ -31,6 +37,11 @@ public class DomReader {
         }
     }
 
+    /**
+     * Метод проверяет среднюю оценку и корректирует её
+     *
+     * @return - скорректированный файл
+     */
     public Document fixIssues() {
         LinkedList<Integer> marks;
         NodeList students = document.getElementsByTagName("student");
