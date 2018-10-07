@@ -1,0 +1,106 @@
+Start of document
+group
+	student
+		Kolya
+		Petrov
+		6209
+		subject
+			math
+			5
+		subject
+		subject
+			eng
+			4
+		subject
+		subject
+			rus
+			3
+		subject
+		subject
+			physics
+			5
+		subject
+		average
+			4.25 is correct average
+		average
+	student
+	student
+		Kil
+		Real
+		6209
+		subject
+			math
+			2
+		subject
+		subject
+			eng
+			2
+		subject
+		subject
+			rus
+			5
+		subject
+		subject
+			physics
+			2
+		subject
+!!!Need to add <average>2.75</average>!!!
+	student
+	student
+		Kate
+		Sergeevna
+		6209
+		subject
+			math
+			4
+		subject
+		subject
+			eng
+			4
+		subject
+		subject
+			rus
+			4
+		subject
+		subject
+			physics
+			3
+		subject
+		average
+!!!correct average is 3.75 !!!
+		average
+	student
+	student
+		Elizaveta
+		Petrovna
+		6209
+		average
+!!!need to remove average tag!!!
+		average
+	student
+	student
+		Nikita
+		Parenski
+		6209
+		subject
+			math
+			5
+		subject
+		subject
+			eng
+			5
+		subject
+		subject
+			rus
+			5
+		subject
+		subject
+			physics
+			5
+		subject
+		average
+			5.0 is correct average
+		average
+	student
+group
+End of document

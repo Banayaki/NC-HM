@@ -1,0 +1,35 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<!DOCTYPE group SYSTEM "config.dtd">
+
+<group>
+    <student firstname="Kolya" lastname="Petrov" groupnumber="6209">
+        <subject title="math" mark="5"/>
+        <subject title="eng" mark="4"/>
+        <subject title="rus" mark="3"/>
+        <subject title="physics" mark="5"/>
+        <average>4.25</average>
+    </student>
+    <student firstname="Kil" lastname="Real" groupnumber="6209">
+        <subject title="math" mark="2"/>
+        <subject title="eng" mark="2"/>
+        <subject title="rus" mark="5"/>
+        <subject title="physics" mark="2"/>
+    </student>
+    <student firstname="Kate" lastname="Sergeevna" groupnumber="6209">
+        <subject title="math" mark="4"/>
+        <subject title="eng" mark="4"/>
+        <subject title="rus" mark="4"/>
+        <subject title="physics" mark="3"/>
+        <average>4.25</average>
+    </student>
+    <student firstname="Elizaveta" lastname="Petrovna" groupnumber="6209">
+        <average>5</average>
+    </student>
+    <student firstname="Nikita" lastname="Parenski" groupnumber="6209">
+        <subject title="math" mark="5"/>
+        <subject title="eng" mark="5"/>
+        <subject title="rus" mark="5"/>
+        <subject title="physics" mark="5"/>
+        <average>5</average>
+    </student>
+</group>
