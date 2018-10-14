@@ -1,0 +1,104 @@
+#NameNumberGroup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#NameNumberGroup > label {
+    margin: 7px;
+}
+
+#arstotzka {
+    background-position: center;
+    width: 100%;
+}
+
+#EmpNameLabel {
+    margin-right: 18px;
+    padding-right: 1px;
+}
+
+#EmpNumLabel {
+    margin-right: 3px;
+}
+
+#empTable, div.TextFieldsGroup {
+    display: flex;
+    justify-content: center;
+}
+
+#SubmitButton {
+    position: relative;
+    top: 6px;
+    left: 41%;
+    margin-bottom: 15px;
+}
+
+#ShowEmpl {
+    margin: 10px;
+}
+
+#DeleteStr {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    align-content: center;
+}
+
+#modal {
+    display: none;
+}
+
+.dialog {
+    background: white;
+    color: black;
+    overflow: hidden;
+}
+
+.dialog.ui-dialog-titlebar{
+    display: none;
+}
+
+.deleteDialogBtn {
+    margin-left: 14%;
+    margin-bottom: 15%;
+    margin-right: 30px;
+}
+
+.cancelDialogBtn {
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid #fffbfd;
+    margin: 10px;
+}
+
+tr {
+    border: 2px solid white;
+}
+
+td {
+    padding: 5px;
+    font-max-size: xx-large;
+    font-size: xx-large;
+    font-min-size: small;
+    border: 2px solid white;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: #f8fdff;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: aqua;
+}
+
+body {
+    background: #000000;
+    color: #fff;
+}

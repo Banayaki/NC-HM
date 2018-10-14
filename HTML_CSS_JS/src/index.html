@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML CSS JS Overview</title>
+    <link href="css/styleSheet.css" rel="stylesheet">
+</head>
+<body>
+<!-- action="???" -->
+<div class="TextFieldsGroup">
+    <form>
+        <div class="Labels" id="NameNumberGroup">
+            <label>
+                <b id="EmpNumLabel">Номер Сотрудника</b>
+                <input type="text" id="employeeNumber" autocomplete="off">
+            </label>
+            <label>
+                <b id="EmpNameLabel">Имя Сотрудника</b>
+                <input type="text" id="employeeName" autocomplete="off" onfocus="onFocusField()">
+            </label>
+        </div>
+        <input id="SubmitButton" type="submit" value="Submit" onclick="onSubmit()">
+    </form>
+</div>
+<div class="TextFieldsGroup">
+    <a href="new_empl.html">Новый сотрудник?</a>
+</div>
+<div id="ShowEmpl" class="TextFieldsGroup">
+    <form>
+        <label>
+            <b>Показать Всех Сотрудников</b>
+            <!-- onclick -->
+            <input type="button" value="Show" onclick="onShow()">
+        </label>
+    </form>
+</div>
+<div id="empTable" style="display: none">
+    <table>
+        <!--(tr.tableRow*10)>(td>input[type="checkbox"])+(td>a{$})+(td>div.fname{Clone_$})+(td>div.post{worker_$})+(td>div.hiredate{0$.06.2006})+(td>div.department{IT})+(td>div.deleteRef>a[]{Удалить})-->
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">1</a></td>
+            <td>
+                <div class="fname">Clone1</div>
+            </td>
+            <td>
+                <div class="post">worker1</div>
+            </td>
+            <td>
+                <div class="hiredate">01.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">2</a></td>
+            <td>
+                <div class="fname">Clone2</div>
+            </td>
+            <td>
+                <div class="post">worker2</div>
+            </td>
+            <td>
+                <div class="hiredate">02.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">3</a></td>
+            <td>
+                <div class="fname">Clone3</div>
+            </td>
+            <td>
+                <div class="post">worker3</div>
+            </td>
+            <td>
+                <div class="hiredate">03.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">4</a></td>
+            <td>
+                <div class="fname">Clone4</div>
+            </td>
+            <td>
+                <div class="post">worker4</div>
+            </td>
+            <td>
+                <div class="hiredate">04.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">5</a></td>
+            <td>
+                <div class="fname">Clone5</div>
+            </td>
+            <td>
+                <div class="post">worker5</div>
+            </td>
+            <td>
+                <div class="hiredate">05.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">6</a></td>
+            <td>
+                <div class="fname">Clone6</div>
+            </td>
+            <td>
+                <div class="post">worker6</div>
+            </td>
+            <td>
+                <div class="hiredate">06.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">7</a></td>
+            <td>
+                <div class="fname">Clone7</div>
+            </td>
+            <td>
+                <div class="post">worker7</div>
+            </td>
+            <td>
+                <div class="hiredate">07.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">8</a></td>
+            <td>
+                <div class="fname">Clone8</div>
+            </td>
+            <td>
+                <div class="post">worker8</div>
+            </td>
+            <td>
+                <div class="hiredate">08.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">9</a></td>
+            <td>
+                <div class="fname">Clone9</div>
+            </td>
+            <td>
+                <div class="post">worker9</div>
+            </td>
+            <td>
+                <div class="hiredate">09.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+        <tr class="tableRow">
+            <td><input type="checkbox"></td>
+            <td><a href="">10</a></td>
+            <td>
+                <div class="fname">Clone10</div>
+            </td>
+            <td>
+                <div class="post">worker10</div>
+            </td>
+            <td>
+                <div class="hiredate">10.06.2006</div>
+            </td>
+            <td>
+                <div class="department">IT</div>
+            </td>
+            <td>
+                <div class="deleteRef"><a >Удалить</a></div>
+            </td>
+        </tr>
+    </table>
+</div>
+<img id="arstotzka" src="img/background.jpg">
+
+<div id="modal">
+    <span id="DeleteStr">Удалить эту строку?</span>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
+<script src="js/indexScripts.js"></script>
+</body>
+</html>

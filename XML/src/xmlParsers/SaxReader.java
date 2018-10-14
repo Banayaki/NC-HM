@@ -64,6 +64,7 @@ public class SaxReader extends DefaultHandler {
             stringBuilder.delete(0, stringBuilder.length());
         } catch (SAXException | IOException e) {
             e.printStackTrace();
+            System.exit(-1);
         }
     }
 
@@ -144,13 +145,15 @@ public class SaxReader extends DefaultHandler {
     public void characters(char[] ch, int start, int length) {
         this.isWasInAverage = true;
         double inputAverage = Double.parseDouble(new String(ch, start, length));
-        double realAverage = findAverage();
-        if (realAverage == 0) {
+        if (marks.size() == 0) {
             stringBuilder.append("!!!need to remove average tag!!!").append('\n');
-        } else if (Math.abs(realAverage - inputAverage) < Utils.EPS) {
-            stringBuilder.append("\t\t\t").append(inputAverage).append(" is correct average").append('\n');
         } else {
-            stringBuilder.append("!!!correct average is ").append(realAverage).append(" !!!").append('\n');
+            double realAverage = findAverage();
+            if (Double.compare(realAverage, inputAverage) == 0) {
+                stringBuilder.append("\t\t\t").append(inputAverage).append(" is correct average").append('\n');
+            } else {
+                stringBuilder.append("!!!correct average is ").append(realAverage).append(" !!!").append('\n');
+            }
         }
     }
 

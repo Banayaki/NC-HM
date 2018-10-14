@@ -1,7 +1,10 @@
 package xmlParsers;
 
 import org.w3c.dom.*;
+import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
+import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -28,12 +31,14 @@ public class DomReader {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setValidating(true);
             DocumentBuilder builder = factory.newDocumentBuilder();
+            builder.setErrorHandler(new MyErrorHandler());
             this.document = builder.parse(docName);
             this.document.normalizeDocument();
             this.stringBuilder = new StringBuilder();
         } catch (ParserConfigurationException | IOException | SAXException e) {
             System.err.println(e.getMessage());
             e.printStackTrace();
+            System.exit(-1);
         }
     }
 
@@ -68,7 +73,7 @@ public class DomReader {
                 } else {
                     double inputAverage = Double.parseDouble(student.getElementsByTagName("average")
                             .item(0).getTextContent());
-                    if (Math.abs(realAverage - inputAverage) > Utils.EPS) {
+                    if (Double.compare(realAverage, inputAverage) != 0) {
                         average.item(0).getFirstChild().setTextContent(String.valueOf(realAverage));
                     }
                 }
@@ -81,25 +86,20 @@ public class DomReader {
         return this.document;
     }
 
-    public void printDocumentContent() {
-        Element elem = document.getDocumentElement();
-        stringBuilder.append("Root element ").append(elem.getTagName()).append("\n");
-        getChildNodes(elem);
-        System.out.println(stringBuilder.toString());
-        stringBuilder.delete(0, stringBuilder.length());
-    }
-
-
     public void printDocumentContent(String filename) {
         Element elem = document.getDocumentElement();
         stringBuilder.append("Root element ").append(elem.getTagName()).append("\n");
         getChildNodes(elem);
-        try (Writer writer = new BufferedWriter(new FileWriter(filename))) {
-            writer.write(stringBuilder.toString());
-            stringBuilder.delete(0, stringBuilder.length());
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (filename == null) {
+            System.out.println(stringBuilder.toString());
+        } else {
+            try (Writer writer = new BufferedWriter(new FileWriter(filename))) {
+                writer.write(stringBuilder.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        stringBuilder.delete(0, stringBuilder.length());
     }
 
     private void getAttributes(Node node) {
@@ -130,4 +130,29 @@ public class DomReader {
             getNodeContent(child);
         }
     }
+
+    private static class MyErrorHandler implements ErrorHandler {
+        public void warning(SAXParseException e) throws SAXException {
+            show("Warning", e);
+            throw (e);
+        }
+
+        public void error(SAXParseException e) throws SAXException {
+            show("Error", e);
+            throw (e);
+        }
+
+        public void fatalError(SAXParseException e) throws SAXException {
+            show("Fatal Error", e);
+            throw (e);
+        }
+
+        private void show(String type, SAXParseException e) {
+            System.out.println(type + ": " + e.getMessage());
+            System.out.println("Line " + e.getLineNumber() + " Column "
+                    + e.getColumnNumber());
+            System.out.println("System ID: " + e.getSystemId());
+        }
+    }
 }
+
