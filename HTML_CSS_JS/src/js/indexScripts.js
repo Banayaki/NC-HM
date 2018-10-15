@@ -16,7 +16,7 @@ function onSubmit() {
     } else {
         var value = document.getElementById("employeeName").value;
         var url = "submiting.html";
-        var new_window = window.open(url);
+        var new_window = window.open(url + "?" + value);
         new_window.document.getElementById("employeeName").value = value;
     }
 }

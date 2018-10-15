@@ -13,6 +13,10 @@
             <label>
                 <b id="EmpNameLabel">Имя Сотрудника</b>
                 <input type="text" id="employeeName" autocomplete="off">
+                <script>
+                    var value = document.location.href.split('?')[1];
+                    document.getElementById("employeeName").value = value;
+                </script>
             </label>
         </div>
         <input id="SubmitButton" type="submit" value="Сохранить" onclick="">
