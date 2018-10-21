@@ -16,7 +16,7 @@
             </label>
             <label>
                 <b id="EmpNameLabel">Имя Сотрудника</b>
-                <input type="text" id="employeeName" autocomplete="off" onfocus="onFocusField()">
+                <input type="text" value="Например, Иванов" id="employeeName" autocomplete="off">
             </label>
         </div>
         <input id="SubmitButton" type="submit" value="Submit" onclick="onSubmit()">
@@ -34,10 +34,10 @@
         </label>
     </form>
 </div>
-<div id="empTable" style="display: none">
+<div id="EmpTable" style="display: none">
     <table>
-        <!--(tr.tableRow*10)>(td>input[type="checkbox"])+(td>a{$})+(td>div.fname{Clone_$})+(td>div.post{worker_$})+(td>div.hiredate{0$.06.2006})+(td>div.department{IT})+(td>div.deleteRef>a[]{Удалить})-->
-        <tr class="tableRow">
+        <!--(tr.TableRow*10)>(td>input[type="checkbox"])+(td>a{$})+(td>div.fname{Clone_$})+(td>div.post{worker_$})+(td>div.hiredate{0$.06.2006})+(td>div.department{IT})+(td>div.deleteRef>a[]{Удалить})-->
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">1</a></td>
             <td>
@@ -56,7 +56,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">2</a></td>
             <td>
@@ -75,7 +75,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">3</a></td>
             <td>
@@ -94,7 +94,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">4</a></td>
             <td>
@@ -113,7 +113,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">5</a></td>
             <td>
@@ -132,7 +132,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">6</a></td>
             <td>
@@ -151,7 +151,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">7</a></td>
             <td>
@@ -170,7 +170,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">8</a></td>
             <td>
@@ -189,7 +189,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">9</a></td>
             <td>
@@ -208,7 +208,7 @@
                 <div class="deleteRef"><a >Удалить</a></div>
             </td>
         </tr>
-        <tr class="tableRow">
+        <tr class="TableRow">
             <td><input type="checkbox"></td>
             <td><a href="">10</a></td>
             <td>
@@ -229,9 +229,9 @@
         </tr>
     </table>
 </div>
-<img id="arstotzka" src="img/background.jpg">
+<img id="Arstotzka" src="img/background.jpg">
 
-<div id="modal">
+<div id="Modal">
     <span id="DeleteStr">Удалить эту строку?</span>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

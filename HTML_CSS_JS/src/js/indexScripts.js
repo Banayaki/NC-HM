@@ -1,12 +1,18 @@
 document.onsubmit = onSubmit;
 
-function onFocusField() {
-    var node = document.getElementById('employeeName');
-    if (node.value === "") {
-        node.value = "Например, Иванов";
-        $('#employeeName').select();
+$("#employeeName").focusin(function () {
+    var val = $(this).val();
+    if (val === "Например, Иванов") {
+        $(this).val("");
     }
-}
+});
+
+$("#employeeName").focusout(function () {
+    var val = $(this).val();
+    if (val === "") {
+        $(this).val("Например, Иванов");
+    }
+});
 
 function onSubmit() {
     var fieldValue = document.getElementById("employeeNumber").value;
@@ -17,22 +23,21 @@ function onSubmit() {
         var value = document.getElementById("employeeName").value;
         var url = "submiting.html";
         var new_window = window.open(url + "?" + value);
-        new_window.document.getElementById("employeeName").value = value;
     }
 }
 
 function onShow() {
-    var isShow = document.getElementById("empTable").style.display;
+    var isShow = document.getElementById("EmpTable").style.display;
     if (isShow !== "none") {
-        document.getElementById("empTable").style.display = "none";
+        document.getElementById("EmpTable").style.display = "none";
     } else {
-        document.getElementById("empTable").style.display = "flex";
+        document.getElementById("EmpTable").style.display = "flex";
     }
 }
 
 $('.deleteRef').click(function () {
     var calling = $(this);
-    $("#modal").dialog({
+    $("#Modal").dialog({
         dialogClass: "dialog",
         modal: true,
         width: 200,
