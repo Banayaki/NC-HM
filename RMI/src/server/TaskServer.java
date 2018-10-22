@@ -1,9 +1,5 @@
-package servet;
+package server;
 
-import servet.CalculateImpl;
-
-import java.net.MalformedURLException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -20,7 +16,6 @@ public class TaskServer {
             Registry registry = LocateRegistry.createRegistry(1099);
             registry.rebind(serviceName, calculateService);
             System.out.println("client.Calculate service is initialized");
-
         } catch (RemoteException e) {
             e.printStackTrace();
             System.exit(1);

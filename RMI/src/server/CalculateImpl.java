@@ -1,4 +1,4 @@
-package servet;
+package server;
 
 import client.Calculate;
 import client.Task;
@@ -11,7 +11,7 @@ import java.rmi.server.UnicastRemoteObject;
  */
 public class CalculateImpl extends UnicastRemoteObject implements Calculate {
 
-    public CalculateImpl() throws RemoteException {
+    CalculateImpl() throws RemoteException {
     }
 
     /**
