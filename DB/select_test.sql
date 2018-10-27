@@ -1,0 +1,82 @@
+-- Task 1
+SELECT * FROM DEPT;
+
+-- Task 2
+SELECT ENAME || ' ' || JOB AS "Employee", SAL*12 AS "Annual Salary" FROM EMP;
+
+-- Task 3
+SELECT ENAME as "Name", SAL as "Salary"
+  FROM EMP
+  WHERE SAL NOT BETWEEN 1500 and 2850
+  ORDER BY ENAME;
+
+-- Task 4
+INSERT INTO EMP (EMPNO, ENAME, JOB)
+  VALUES (3333, 'SomeMan', 'Agent');
+
+SELECT * FROM EMP;
+
+SELECT EMPNO, ENAME, JOB
+  FROM EMP
+  WHERE EMPNO in (1111, 2222, 3333);
+
+DELETE FROM EMP WHERE EMPNO = 3333;
+
+-- Task 5
+SELECT ENAME
+  FROM EMP
+  WHERE 'A' = UPPER(SUBSTR(ENAME, 2, 1));
+
+-- Task 6
+SELECT ENAME, '*' || SAL as "Salary", EMPNO
+  FROM EMP
+  WHERE LENGTH(ENAME) < 6;
+
+-- Task 7
+SELECT ENAME, ROUND(MONTHS_BETWEEN(SYSDATE, HIREDATE)) AS "Months from hire"
+  FROM EMP
+  ORDER BY "Months from hire" DESC;
+
+-- Task 8
+SELECT ENAME, SAL, COMM, SAL+NVL(COMM, 0) AS "Salary + commission"
+  FROM EMP;
+
+-- Task 9
+SELECT ENAME, NVL(TO_CHAR(COMM), 'No commissions') AS "Commissions"
+  FROM EMP;
+
+-- Task 10
+SELECT DISTINCT JOB
+  FROM EMP
+  WHERE DEPTNO=30;
+
+-- Task 11
+SELECT ENAME, JOB, EMP.DEPTNO
+  FROM EMP, DEPT
+  WHERE EMP.DEPTNO = DEPT.DEPTNO and UPPER(DEPT.LOC) = 'DALLAS';
+
+-- Task 12
+SELECT employee.ENAME, employee.EMPNO, manager.ENAME, manager.EMPNO
+  FROM EMP employee, EMP manager
+  WHERE employee.MGR = manager.EMPNO;
+
+-- Task 13
+SELECT d.DEPTNO, d.DNAME, e.EMPNO, e.ENAME
+  FROM DEPT d, EMP e
+  WHERE d.DEPTNO = e.DEPTNO(+);
+
+-- Task 14
+SELECT e.ENAME, d.DNAME, e.SAL, s.GRADE
+  FROM DEPT d, EMP e, SALGRADE s
+  WHERE e.DEPTNO = d.DEPTNO and (e.SAL BETWEEN s.LOSAL AND s.HISAL);
+
+-- Task 15
+INSERT INTO EMP (EMPNO, ENAME) VALUES (1, '%%%%%');
+
+SELECT ENAME
+  FROM EMP
+  WHERE INSTR(ENAME, '%') > 0;
+
+DELETE FROM EMP WHERE EMPNO = 1;
+
+SELECT * FROM EMP;
