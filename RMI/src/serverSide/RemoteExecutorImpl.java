@@ -10,6 +10,6 @@ import java.rmi.RemoteException;
 public class RemoteExecutorImpl implements RemoteExecutor {
     @Override
     public Result execute(AbstractTask task) throws RemoteException {
-        return new TaskResult(task);
+        return new Result(task);
     }
 }

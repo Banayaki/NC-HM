@@ -1,5 +1,7 @@
 package serverSide;
 
+import onBothSide.RemoteExecutor;
+
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -21,7 +23,7 @@ public class ServerApp {
         Registry registry;
         try {
             registry = LocateRegistry.createRegistry(REGISTRY_PORT);
-            RemoteExecutorImpl executor = new RemoteExecutorImpl();
+            RemoteExecutor executor = new RemoteExecutorImpl();
             UnicastRemoteObject.exportObject(executor, EXECUTOR_PORT);
             registry.rebind(EXECUTOR_NAME, executor);
             System.out.println("Server is started");

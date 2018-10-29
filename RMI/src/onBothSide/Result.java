@@ -2,7 +2,17 @@ package onBothSide;
 
 import java.io.Serializable;
 
-public interface Result extends Serializable {
+public class Result implements Serializable {
+    private String result;
 
-    String getResult();
+    public Result(AbstractTask task) {
+        this.result = String.valueOf(task.getOperand1()) + " " +
+                String.valueOf(task.getOperation()) + " " +
+                String.valueOf(task.getOperand2()) + " = " +
+                String.valueOf(task.calculate());
+    }
+
+    public String getResult() {
+        return result;
+    }
 }
