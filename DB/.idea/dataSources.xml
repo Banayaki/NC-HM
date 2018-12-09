@@ -10,6 +10,7 @@
       <jdbc-url>jdbc:oracle:thin:@localhost:1521:XE</jdbc-url>
       <driver-properties>
         <property name="v$session.program" value="DataGrip" />
+        <property name="serveroutput" value="true" />
       </driver-properties>
     </data-source>
   </component>
